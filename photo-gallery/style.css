@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    background: #efeeee;
+    color: #000;
+    font-family: 'Varela Round', serif;
+}
+
+nav {
+    width: calc(100% - 40px);
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    background: #efeeee;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburger {
+    width: 20px;
+    height: 20px;
+    /* border-radius: 50%; */
+    /* background: #000; */
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.line {
+    background: #000;
+    width: 20px;
+    height: 2px;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+
+.low {
+    transform-origin: 1px 50%;
+}
+
+.high {
+    transform-origin: 1px 50%;
+}
+
+.menu {
+    position: absolute;
+    top: 99%;
+    right: -200px;
+    width: 200px;
+    height: 250px;
+    background: #efeeee;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    transition: all 0.3s;
+}
+
+.dark-mode {
+    padding-left: 20px;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switch {
+    /* margin: 0 10px; */
+    width: 40px;
+    height: 20px;
+    position: relative;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: #83858D;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    transition: all 0.4s;
+}
+
+input:checked+.slider::before {
+    transform: translateX(20px);
+}
+
+a {
+    text-decoration: none;
+    padding: 0 20px;
+    color: inherit;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'Varela Round', serif;
+}
+
+span {
+    font-size: 0.7em;
+}
+
+.center {
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.photo-grid {
+    background: #83858D;
+    padding: 80px 40px;
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+}
+
+img {
+    width: 220px;
+    transition: all 0.3s;
+    filter: grayscale(0);
+}
+
+img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0);
+}
+
+footer {
+    background: #efeeee;
+    padding: 50px;
+    display: grid;
+    place-content: center;
+}
+
+@media screen and (min-width: 720px) {
+    .photo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    img {
+        width: 300px;
+        filter: grayscale(0);
+    }
+}
+
+@media screen and (min-width: 1030px) {
+    .photo-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    img {
+        width: 300px;
+        filter: grayscale(100%);
+    }
+    .hamburger {
+        display: none;
+    }
+    .menu {
+        position: static;
+        background: transparent;
+        flex-direction: row;
+        align-items: center;
+        height: fit-content;
+        width: 500px;
+    }
+}
+
+.up {
+    transform: rotateZ(-45deg);
+}
+
+.down {
+    transform: rotateZ(45deg);
+}
+
+.none {
+    opacity: 0;
+}
+
+.menu-open {
+    right: 0;
+}
+
+
+/* Dark mode classes */
+
+.dark {
+    background: #0F0F10;
+    color: #fff;
+}
+
+.grid-dark {
+    background: #171719;
+}
+
+.line-dark {
+    background: #fff;
+}
